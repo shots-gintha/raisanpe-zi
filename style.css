@@ -6,6 +6,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-padding-top: 60px; /* ナビゲーションの高さ分、スクロール位置を調整 */
 }
 
 body {
@@ -170,7 +171,7 @@ nav ul li a {
 /* 各セクションの基本スタイル */
 section {
     min-height: 100vh;
-    padding: 60px 5vw; /* ナビの高さに合わせる */
+    padding: 100px 5vw; /* ナビの高さ(60px)より多めに余白を取り、重なりを解消 */
     color: white;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
@@ -193,7 +194,7 @@ section {
 @media (max-width: 768px) {
     section {
         min-height: auto;    /* モバイルではコンテンツ量に合わせて高さを可変に */
-        padding: 40px 5vw;   /* セクション上部の余白をさらに詰める */
+        padding: 80px 5vw;   /* スマホでもナビに被らないよう余白を確保 */
     }
 }
 
