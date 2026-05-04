@@ -1,0 +1,300 @@
+html {
+    scroll-behavior: smooth; /* スクロールを滑らかにする */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* min-height: 100vh により、コンテンツが少なくても画面全体を背景色で満たします */
+    min-height: 100vh;
+    background: linear-gradient(90deg, rgb(95, 72, 148), rgb(20, 0, 0));
+    background-attachment: fixed; /* スクロールしても背景が固定されるようにします */
+}
+
+nav {
+    height: 60px; /* 高さを固定 */
+    display: flex;
+    align-items: center;
+    position: fixed; /* スクロールしてもメニューが常に上に表示されるように固定 */
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: rgb(0, 0, 0); /* 不透明な黒 */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* 左揃えから中央揃えに戻す */
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.haikei {
+    /* flexboxによる中央配置は、子要素をabsoluteにするため不要になります */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    min-height: 100vh;
+    position: relative;      /* 子要素の absolute の基準になります */
+    overflow: hidden;
+    /* 下に向かって暗くなるグラデーションを重ねて、次のセクションとの境目を自然にする */
+    background: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,0.8) 100%);
+}
+
+/* 背景画像が最背面に来るように微調整 */
+.main-img {
+    z-index: 0;
+}
+
+.haikei h1 {
+    position: absolute;
+    top: 60px;               /* ナビ(60px)のすぐ下に配置 */
+    left: 0;                 /* 左側の余白を削除 */
+    z-index: 2;
+}
+
+.logo-img {
+    width: 25vw;             /* ロゴを少し小さく調整 */
+    min-width: 120px;        /* 最小サイズも少し小さくします */
+    height: auto;
+    filter: drop-shadow(2px 2px 10px rgba(0,0,0,0.5)); /* 画像の形に合わせた影を付与 */
+}
+
+.main-img {
+    position: absolute;      /* 画像も絶対配置にして、h1とは独立して中央に配置 */
+    top: 60px;               /* ナビ(60px)のすぐ下に配置 */
+    left: 50%;               /* 親要素の左端から50% */
+    transform: translateX(-50%); /* 左右中央揃えのみ（上下中央を解除） */
+    z-index: 1;
+    width: 90%;              /* max-widthではなくwidthを指定してサイズを強制的に拡大 */
+    height: auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* 画像に影をつけて浮き立たせる */
+}
+
+.main-sns-links {
+    position: absolute;
+    bottom: 5vh;             /* 画面下部から5%の位置に固定 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 3;
+}
+
+.main-sns-links a {
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* 各ボタンのブランドカラー設定 */
+.main-sns-links a:nth-child(1) { /* YouTube: 赤 */
+    background-color: #ff0000;
+    border-color: #ff0000;
+}
+
+.main-sns-links a:nth-child(2) { /* X: 黒 */
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.main-sns-links a:nth-child(3) { /* Instagram: ピンク */
+    background-color: #e1306c;
+    border-color: #e1306c;
+}
+
+.main-sns-links a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* 画面の横幅が768px以下の時（スマホ・タブレット）の調整 */
+@media (max-width: 768px) {
+    .haikei {
+        min-height: 100vh;   /* 画面全体を覆うようにして、スクロールするまで次が見えないようにする */
+    }
+
+    nav ul {
+        flex-wrap: wrap;    /* メニューが多い場合に折り返して表示 */
+        gap: 15px;          /* 間隔を狭くして収まりやすくする */
+        padding: 0 10px;
+    }
+    nav ul li a {
+        font-size: 0.75rem; /* 文字を少し小さくする */
+    }
+
+    .haikei h1 {
+        position: absolute; /* メニュー項目(TOP等)との重なりを避けるため、絶対配置に変更 */
+        top: 60px;          /* ナビのすぐ下 */
+        left: 50%;          /* 水平方向の中央に配置 */
+        transform: translateX(-50%); /* 要素自身の幅の半分だけ左に戻して完全に中央寄せ */
+        z-index: 2;
+    }
+    .logo-img {
+        width: 50vw;        /* スマホ版のロゴを少し小さく */
+        max-width: 180px;   /* 最大幅も合わせて調整 */
+        min-width: auto;
+    }
+    .main-img {
+        width: 100%;     /* 確実に幅を専有させる */
+        height: auto;    /* 高さを自動にして画像の比率を維持する */
+        max-height: 75vh; /* 縦に長くなりすぎてボタンを隠さないように制限 */
+        object-fit: contain; /* 画像全体が収まるようにし、端が切れないようにする */
+        top: 60px;       /* スマホ版でもナビのすぐ下 */
+        transform: translateX(-50%);
+    }
+
+    .main-sns-links {
+        bottom: 10vh;    /* セクションを短くした分、位置を微調整 */
+        gap: 10px;
+    }
+}
+
+/* 各セクションの基本スタイル */
+section {
+    min-height: 100vh;
+    padding: 60px 5vw; /* ナビの高さに合わせる */
+    color: white;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* コンテンツの裏に薄い背景を敷いて、グラデーションとの境目を作る */
+    background-color: rgba(0, 0, 0, 0.2);
+    scroll-margin-top: 60px; /* ナビの高さに合わせる */
+}
+
+/* 特定のセクションだけ色を変えることもできます */
+#news {
+    background-color: rgba(20, 0, 0, 0.5); /* NEWSセクションを少し暗く */
+}
+
+#live {
+    background-color: rgba(95, 72, 148, 0.3); /* LIVEセクションを紫っぽく */
+}
+
+@media (max-width: 768px) {
+    section {
+        min-height: auto;    /* モバイルではコンテンツ量に合わせて高さを可変に */
+        padding: 40px 5vw;   /* セクション上部の余白をさらに詰める */
+    }
+}
+
+.sns-container {
+    width: 100%;
+    max-width: 600px; /* SNSの幅を制限して見やすくする */
+    margin-top: 20px; /* 30pxから20pxに縮小 */
+    margin: 0 auto;
+}
+
+/* MEMBER ページ用のスタイル */
+.member-grid {
+    display: grid;
+    /* スマホでは強制的に2列にする（1fr 1fr）ことで、横スクロールを防止 */
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px; /* スマホで見やすい幅に制限 */
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+/* PCやタブレットなど、画面幅が広い（769px以上）時の設定 */
+@media (min-width: 769px) {
+    .member-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        max-width: 1000px;
+    }
+}
+
+.member-photo {
+    width: 80%; /* カード内での写真の大きさ */
+    max-width: 120px;
+    aspect-ratio: 1 / 1; /* 正方形を維持 */
+    object-fit: cover; /* 画像を枠いっぱいに収める */
+    border-radius: 50%; /* 円形にする */
+    margin-bottom: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.member-card {
+    text-decoration: none; /* 下線を消す */
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.member-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: white;
+}
+
+.member-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.back-home {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.back-home a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+/* 個別ページ用スタイル */
+.member-detail-container {
+    width: 100%;
+    max-width: 600px; /* スマホで見やすい幅 */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.member-detail-name {
+    font-size: 2.5rem; /* スマホで適切なサイズ */
+    margin-bottom: 5px;
+    letter-spacing: 0.1em;
+}
+
+.member-bio {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 15px;
+    line-height: 1.8;
+    margin-top: 20px;
+}
