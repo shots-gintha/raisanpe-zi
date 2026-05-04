@@ -299,3 +299,30 @@ section {
     line-height: 1.8;
     margin-top: 20px;
 }
+
+/* 個別ページ用SNSボタン */
+.member-sns-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: center;
+}
+
+.member-sns-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.member-sns-links a.x-link { background-color: #000; border: 1px solid #333; }
+.member-sns-links a.insta-link { background-color: #e1306c; border: 1px solid #e1306c; }
+.member-sns-links a.youtube-link { background-color: #ff0000; border: 1px solid #ff0000; }
+
+.member-sns-links a:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+}
