@@ -1,25 +1,25 @@
-html {
-    scroll-behavior: smooth; /* スクロールを滑らかにする */
-}
+html { /* HTML文書全体への設定です */
+    scroll-behavior: smooth; /* ページ内リンクで移動する際に、動きを滑らかにします */
+} /* HTML設定の終わりです */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-padding-top: 60px; /* ナビゲーションの高さ分、スクロール位置を調整 */
-}
+*{ /* 全ての要素（タグ）に適用される一括設定です */
+    margin: 0; /* 外側の余白を一度すべてゼロにします */
+    padding: 0; /* 内側の余白を一度すべてゼロにします */
+    box-sizing: border-box; /* パディングや枠線を幅に含める計算方式にしてズレを防ぎます */
+    scroll-padding-top: 60px; /* リンク移動した際、上のメニューに隠れないよう上部を空けます */
+} /* 全要素設定の終わりです */
 
-body {
+body { /* ページのボディ全体への設定です */
     /* min-height: 100vh により、コンテンツが少なくても画面全体を背景色で満たします */
-    min-height: 100vh;
-    background: linear-gradient(90deg, rgb(95, 72, 148), rgb(20, 0, 0));
+    min-height: 100vh; /* 画面全体の高さを最低限確保します */
+    background: linear-gradient(90deg, rgb(95, 72, 148), rgb(20, 0, 0)); /* 紫から黒へのグラデーション背景です */
     background-attachment: fixed; /* スクロールしても背景が固定されるようにします */
-}
+} /* body設定の終わりです */
 
-nav {
-    height: 60px; /* 高さを固定 */
-    display: flex;
-    align-items: center;
+nav { /* 上部メニューバーの設定です */
+    height: 60px; /* メニューの高さを60ピクセルに固定します */
+    display: flex; /* 中の要素を横に並べるための仕組みです */
+    align-items: center; /* メニュー項目を上下中央に配置します */
     position: fixed; /* スクロールしてもメニューが常に上に表示されるように固定 */
     top: 0;
     width: 100%;
@@ -285,6 +285,16 @@ section {
     flex-direction: column;
     align-items: center;
 }
+
+.member-detail-photo { /* 個別ページ用写真のスタイル設定です */
+    width: 100%; /* 横幅をコンテナいっぱいに広げます */
+    max-width: 300px; /* 写真が大きくなりすぎないよう上限を決めます */
+    aspect-ratio: 1 / 1; /* 正方形で表示します */
+    object-fit: cover; /* 枠に合わせて画像を切り抜きます */
+    border-radius: 15px; /* 角を少し丸くします */
+    margin: 20px 0; /* 上下に余白を作ります */
+    border: 2px solid rgba(255, 255, 255, 0.1); /* 薄い枠線を付けて境界をはっきりさせます */
+} /* 写真スタイルの終わりです */
 
 .member-detail-name {
     font-size: 2.5rem; /* スマホで適切なサイズ */
