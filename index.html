@@ -1,48 +1,48 @@
-<!DOCTYPE html> <!-- HTML5であることを宣言します -->
-<html lang="ja"> <!-- 言語を日本語に指定します -->
-<head> <!-- 文書のメタ情報を記述するヘッドセクションです -->
-    <meta charset="UTF-8"> <!-- 文字コードをUTF-8に設定して文字化けを防ぎます -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- スマホ表示に合わせた画面サイズ調整の設定です -->
-    <title>礼賛ファンが作ったサイト</title> <!-- ブラウザのタブに表示されるタイトルです -->
-    <link rel="stylesheet" href="style.css"> <!-- デザインを定義するCSSファイルを読み込みます -->
-</head> <!-- ヘッドセクションの終わりです -->
-<body> <!-- ブラウザに表示されるコンテンツを記述するボディセクションです -->
-    <nav> <!-- ナビゲーションバー（メニュー）の範囲です -->
-        <ul> <!-- メニュー項目を並べるリスト形式の開始です -->
-            <li><a href="#top">TOP</a></li> <!-- TOPセクションへ移動するリンクです -->
-            <li><a href="#news">NEWS</a></li> <!-- NEWSセクションへ移動するリンクです -->
-            <li><a href="#live">LIVE</a></li> <!-- LIVEセクションへ移動するリンクです -->
-            <li><a href="member.html">MEMBER</a></li> <!-- メンバー一覧ページへ移動するリンクです -->
-        </ul> <!-- リスト形式の終わりです -->
-    </nav> <!-- ナビゲーションバーの終わりです -->
-    <div class="haikei" id="top"> <!-- メインビジュアルとなる「背景」部分の定義です -->
-        <img src="../data/Hyousi.jpg" alt="" class="main-img"> <!-- メインの背景画像を表示します -->
-        <h1><img src="../data/Rogo.jpg" alt="礼賛" class="logo-img"></h1> <!-- サイトのタイトルロゴ画像を表示します -->
-        <div class="main-sns-links"> <!-- SNSリンクをまとめるグループです -->
-            <a href="https://www.youtube.com/@raisan_official" target="_blank">YouTube</a> <!-- 公式YouTubeへのリンクです -->
-            <a href="https://twitter.com/raisan_official" target="_blank">X</a> <!-- 公式Xへのリンクです -->
-            <a href="https://www.instagram.com/raisan_official" target="_blank">Instagram</a> <!-- 公式Instagramへのリンクです -->
-        </div> <!-- SNSリンクグループの終わりです -->
-    </div> <!-- 背景部分の終わりです -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>礼賛ファンが作ったサイト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#top">TOP</a></li>
+            <li><a href="#news">NEWS</a></li>
+            <li><a href="#live">LIVE</a></li>
+            <li><a href="member.html">MEMBER</a></li>
+        </ul>
+    </nav>
+    <div class="haikei" id="top">
+        <img src="../data/Hyousi.jpg" alt="" class="main-img">
+        <h1><img src="../data/Rogo.jpg" alt="礼賛" class="logo-img"></h1>
+        <div class="main-sns-links">
+            <a href="https://www.youtube.com/@raisan_official" target="_blank">YouTube</a>
+            <a href="https://twitter.com/raisan_official" target="_blank">X</a>
+            <a href="https://www.instagram.com/raisan_official" target="_blank">Instagram</a>
+        </div>
+    </div>
 
-    <section id="news"> <!-- 最新ニュースを表示するセクションです -->
-        <h2>NEWS</h2> <!-- セクションの見出しです -->
-        <div class="sns-wrapper"> <!-- SNSの埋め込みをまとめる外枠です -->
-            <!-- X (Twitter) Feed --> <!-- Xのタイムラインを表示するコメントです -->
-            <div class="sns-container"> <!-- Xの表示エリアです -->
-                <a class="twitter-timeline" data-height="600" data-theme="dark" href="https://twitter.com/raisan_official?ref_src=twsrc%5Etfw">Tweets by raisan_official</a> <!-- Xの埋め込みウィジェットです -->
-            </div> <!-- Xの表示エリアの終わりです -->
-            <!-- Instagram Feed Placeholder --> <!-- Instagramの表示エリア（準備中）のコメントです -->
-            <div class="sns-container"> <!-- Instagramの表示エリアです -->
-                <!-- ここに SnapWidget や LightWidget などの外部サービスのコードを貼り付けます --> <!-- 外部サービス利用時の貼り付け位置です -->
-                <p style="color: #888; font-size: 0.8rem;">Instagram Feed will be here</p> <!-- 準備中のメッセージです -->
-            </div> <!-- Instagram表示エリアの終わりです -->
-        </div> <!-- SNS外枠の終わりです -->
-    </section> <!-- NEWSセクションの終わりです -->
-    <section id="live"><h2>LIVE</h2></section> <!-- ライブ情報を表示する（予定の）セクションです -->
+    <section id="news">
+        <h2>NEWS</h2>
+        <div class="sns-wrapper">
+            <!-- X (Twitter) Feed -->
+            <div class="sns-container">
+                <a class="twitter-timeline" data-height="600" data-theme="dark" href="https://twitter.com/raisan_official?ref_src=twsrc%5Etfw">Tweets by raisan_official</a>
+            </div>
+            <!-- Instagram Feed Placeholder -->
+            <div class="sns-container">
+                <!-- ここに SnapWidget や LightWidget などの外部サービスのコードを貼り付けます -->
+                <p style="color: #888; font-size: 0.8rem;">Instagram Feed will be here</p>
+            </div>
+        </div>
+    </section>
+    <section id="live"><h2>LIVE</h2></section>
 
-    <!-- SNS外部スクリプト --> <!-- 外部機能を動かすためのプログラムです -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> <!-- Xのウィジェットを有効化するスクリプトです -->
+    <!-- SNS外部スクリプト -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-</body> <!-- コンテンツ記述の終わりです -->
-</html> <!-- HTML文書全体の終わりです -->
+</body>
+</html>
