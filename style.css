@@ -326,7 +326,8 @@ section {
     font-size: 0.85rem;
     transition: all 0.3s ease;
 }
-
+.member-sns-links a.x-link,
+.member-sns-links a.threads-link { background-color: #000; border: 1px solid #333; }
 .member-sns-links a.x-link { background-color: #000; border: 1px solid #333; }
 .member-sns-links a.insta-link { background-color: #e1306c; border: 1px solid #e1306c; }
 .member-sns-links a.youtube-link { background-color: #ff0000; border: 1px solid #ff0000; }
