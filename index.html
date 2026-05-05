@@ -6,7 +6,12 @@
     <title>礼賛ファンが作ったサイト</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="loading">
+    <!-- 導入演出（スプラッシュスクリーン） -->
+    <div id="splash">
+        <img src="data/rogo.jpg" alt="礼賛" class="splash-logo">
+    </div>
+
     <nav>
         <ul>
             <li><a href="#top">TOP</a></li>
@@ -37,5 +42,14 @@
     <!-- SNS外部スクリプト -->
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+    <!-- 導入演出を終了させるスクリプト -->
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.body.classList.remove('loading');
+                document.body.classList.add('loaded');
+            }, 2000); // 2秒後に演出を終了
+        });
+    </script>
 </body>
 </html>
