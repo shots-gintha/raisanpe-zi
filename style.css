@@ -92,7 +92,8 @@ nav ul li a {
     bottom: 5vh;             /* 画面下部から5%の位置に固定 */
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
+    display: flex;           /* ボタンを並べるための設定です */
+    flex-direction: row;     /* 確実に横並びになるように指定します */
     gap: 20px;
     z-index: 3;
 }
@@ -169,6 +170,7 @@ nav ul li a {
     .main-sns-links {
         bottom: 10vh;    /* セクションを短くした分、位置を微調整 */
         gap: 10px;
+        flex-direction: row; /* スマホ版でも横並びを維持します */
     }
 
     body {
@@ -361,7 +363,6 @@ section {
 }
 .member-sns-links a.x-link,
 .member-sns-links a.threads-link { background-color: #000; border: 1px solid #333; }
-.member-sns-links a.x-link { background-color: #000; border: 1px solid #333; }
 .member-sns-links a.insta-link { background-color: #e1306c; border: 1px solid #e1306c; }
 .member-sns-links a.youtube-link { background-color: #ff0000; border: 1px solid #ff0000; }
 
