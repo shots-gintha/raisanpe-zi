@@ -1,4 +1,6 @@
-html { /* HTML文書全体への設定です */
+html {
+    height: 100%;
+    background: linear-gradient(90deg, rgb(95, 72, 148), rgb(20, 0, 0)); /* htmlにも背景を設定して隙間を防止します */
     scroll-behavior: smooth; /* ページ内リンクで移動する際に、動きを滑らかにします */
 } /* HTML設定の終わりです */
 
@@ -51,7 +53,7 @@ nav ul li a {
     position: relative;      /* 子要素の absolute の基準になります */
     overflow: hidden;
     /* 下に向かって暗くなるグラデーションを重ねて、次のセクションとの境目を自然にする */
-    background: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,0.8) 100%);
+    background: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,0.4) 100%); /* 次のセクションの背景色に合わせて透明度を調整 */
 }
 
 /* 背景画像が最背面に来るように微調整 */
@@ -165,6 +167,10 @@ nav ul li a {
     .main-sns-links {
         bottom: 10vh;    /* セクションを短くした分、位置を微調整 */
         gap: 10px;
+    }
+
+    body {
+        background-attachment: scroll; /* スマホでは背景の固定を解除して不具合を防ぎます */
     }
 }
 
