@@ -125,6 +125,11 @@ nav ul li a {
     border-color: #e1306c;
 }
 
+.main-sns-links a:nth-child(4) { /* Spotify: 緑 */
+    background-color: #1db954;
+    border-color: #1db954;
+}
+
 .main-sns-links a:hover {
     background-color: white;
     color: black;
