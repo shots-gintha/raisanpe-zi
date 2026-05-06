@@ -197,6 +197,15 @@ nav ul li a {
     body {
         background-attachment: scroll; /* スマホでは背景の固定を解除して不具合を防ぎます */
     }
+
+    /* スプラッシュスクリーン関連の調整 */
+    #splash {
+        padding-top: 5vh; /* スマホではロゴをさらに上に配置 */
+    }
+    .splash-logo {
+        width: 90vw; /* スマホではロゴを少し大きく表示 */
+        max-width: 90vw; /* スマホでは最大幅も画面幅に合わせて調整 */
+    }
 }
 
 /* 各セクションの基本スタイル */
@@ -410,7 +419,8 @@ section {
     z-index: 10000;   /* 一番手前に表示 */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* 上寄せに変更 */
+    padding-top: 10vh;      /* 画面上部から10%の位置に配置 */
     transition: opacity 1s ease, visibility 1s ease;
 }
 
