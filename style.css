@@ -168,18 +168,30 @@ nav ul li a {
     }
     .main-img {
         width: 100%;     /* 確実に幅を専有させる */
-        height: auto;    /* 高さを自動にして画像の比率を維持する */
-        max-height: 75vh; /* 縦に長くなりすぎてボタンを隠さないように制限 */
-        object-fit: contain; /* 画像全体が収まるようにし、端が切れないようにする */
+        height: unset;   /* height: auto; を解除し、top/bottom で高さを制御 */
+        max-height: unset; /* 縦の高さ制限を解除 */
+        object-fit: cover; /* 画像全体が領域を覆うように拡大・トリミング */
         top: 60px;       /* スマホ版でもナビのすぐ下 */
-        bottom: auto;
+        bottom: 10vh;    /* SNSリンクの上端に合わせる */
         transform: translateX(-50%);
     }
 
     .main-sns-links {
         bottom: 10vh;    /* セクションを短くした分、位置を微調整 */
-        gap: 10px;
+        gap: 20px;
         flex-direction: row; /* スマホ版でも横並びを維持します */
+    }
+
+    .main-sns-links a {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+
+    .member-sns-links a {
+        width: 55px;
+        height: 55px;
+        font-size: 1.5rem;
     }
 
     body {
